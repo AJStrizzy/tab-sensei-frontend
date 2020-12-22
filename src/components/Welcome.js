@@ -1,9 +1,12 @@
 import React from 'react';
 
+// import Tabs from './Tabs'
+
 function Welcome() {
     return(
         <div>
             <h1>Welcome</h1>
+            
         </div>
     )
 }

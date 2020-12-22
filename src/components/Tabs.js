@@ -58,13 +58,13 @@ class Tabs extends Component {
     }
     render() {
         return(
-            <div className="App">
+            <div className="tabs">
               <h2 id="header">ギタルのタブです</h2>
               <div id="starships">
                   {/* {this.state.starships.map((starship, index) => */}
                   
                   {/* <form onSubmit={console.log('line 49 submit ' + this.state.search)}> */}
-                      <label>Search for Tabs</label> 
+                      <label>Search tabs by song or artist name</label> 
                       <br/>     
                       <input id="inputSearchbar" type="text" onChange={(e=>{this.setState({search: e.target.value})})}></input>
                       <br/>  

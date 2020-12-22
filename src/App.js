@@ -7,7 +7,7 @@ import setAuthToken from './utils/setAuthToken';
 // CSS
 import './App.css';
 // Components
-import Welcome from './components/Welcome';
+import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Profile from './components/Profile';
@@ -54,13 +54,14 @@ function App() {
       localStorage.removeItem('jwtToken');
       setCurrentUser(null);
       setIsAuthenticated(false);
+      
     }
+    // return <Redirect to='/profile' />
   }
 
   return (
     <div className="App">
       <Navbar handleLogout={handleLogout} isAuth={isAuthenticated} />
-      <Tabs />
       <div className="container mt-5">
         <Switch>
           <Route path='/signup' component={ Signup } />
@@ -69,7 +70,7 @@ function App() {
             render={ (props) => <Login {...props} nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated} user={currentUser}/>} />
           <Route path='/about' component={ About } />
           <PrivateRoute path="/profile" component={ Profile } user={currentUser}/>
-          <Route exact path="/" component={ Welcome }/>
+          <Route exact path="/" component={ Home }/>
         </Switch>
       </div>
       <Footer />
@@ -78,3 +79,4 @@ function App() {
 }
 
 export default App;
+      
